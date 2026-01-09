@@ -82,7 +82,7 @@ const ExamInterface = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const handleAnswer = (value: string) => {
+  const handleAnswer = (value) => {
     setAnswers({ ...answers, [currentQuestion]: value });
   };
 
@@ -127,7 +127,7 @@ const ExamInterface = () => {
 
         {questions[currentQuestion].type === "mcq" ? (
           <div className="space-y-2">
-            {questions[currentQuestion].options!.map((opt) => (
+            {questions[currentQuestion].options.map((opt) => (
               <Button
                 key={opt}
                 variant={answers[currentQuestion] === opt ? "default" : "outline"}
